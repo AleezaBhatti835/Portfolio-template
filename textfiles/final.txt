@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleeza Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(189, 223, 211);
+            overflow-x: hidden;
+        }
+
+        .Website {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            width: 100%;
+        }
+
+        .mainpage {
+            padding-top: 80px;
+        }
+
+        .header {
+            grid-row: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: rgb(127, 168, 154);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .Menu {
+
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-left: 90px;
+        }
+
+        .Menu a {
+
+            color: rgb(45, 73, 73);
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: flex;
+            gap: 15px;
+        }
+
+        .up,
+        .down {
+            background-color: rgb(208, 248, 248);
+            border: 0;
+            border-radius: 5px;
+            width: 70px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(189, 223, 211);
+            padding: 20px;
+            gap: 20px;
+            width: 100%;
+            height: 550px;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1px;
+            margin-top: 0px;
+        }
+
+        .box_img {
+            width: 200px;
+            border-radius: 50%;
+            border: 1px hsl(181, 26%, 39%);
+            background-color: hsl(182, 12%, 59%);
+            margin-bottom: 50px;
+        }
+
+        .box_2 {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            background-color: rgb(199, 221, 213);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .box_2 h1 {
+            margin-bottom: 20px;
+            color: hsl(181, 26%, 39%);
+            -webkit-text-stroke: 0.5px rgb(22, 138, 138);
+        }
+
+        .box_2 h2 {
+            margin-bottom: 20px;
+            color: hsl(180, 16%, 38%);
+        }
+
+        .box_2 p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: hsl(180, 18%, 29%);
+        }
+
+
+
+
+        .box_img {
+            margin-top: 1px;
+            margin-bottom: 50px;
+            width: 220px;
+            height: 35dvh;
+            border-radius: 50%;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            margin-left: 230px;
+            height: 10%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .counter-box {
+            background: rgb(129, 160, 161);
+            padding: 20px;
+            border-radius: 12px;
+            width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #d5eeee;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-text {
+            font-size: 1.1rem;
+            color: #f1f8f8;
+        }
+
+
+        .contact {
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
+
+        .contact img {
+            width: 40px;
+            height: 35px;
+        }
+
+        .contact a {
+            color: rgb(69, 95, 86);
+            font-size: 16px;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+
+        .cards {
+            background-color: rgb(205, 223, 221);
+            padding: 20px;
+            margin-top: 95px;
+            border-radius: 8px;
+        }
+
+        .cards h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(66, 94, 90);
+        }
+
+        .cards p {
+            text-align: center;
+            font-size: 18px;
+            color: rgb(66, 94, 90);
+            margin-bottom: 30px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: rgb(174, 195, 196);
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .skill img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .skill2 {
+            height: 14.5vw;
+        }
+
+        .skill4 {
+            height: 14.5vw;
+        }
+
+        .skill button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            background: rgb(92, 145, 130);
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+.skill a{
+                color: white;
+text-decoration: none;
+}
+        .skill h3 {
+            color: rgb(44, 80, 70);
+        }
+
+        .Aboutme {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: rgb(205, 223, 221);
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        .abimg,
+        .content {
+            min-width: 280px;
+            background-color: rgb(188, 209, 206);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .abimg h1,
+        .content h1,
+        .content h3 {
+            margin-top: 90px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: rgb(54, 88, 88);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .content li {
+            margin-left: 20px;
+        }
+
+        .exp {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .exp div {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .Exp2 {
+            margin-top: 15px;
+        }
+
+        .exp img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+
+        .portfolio {
+            background-color: rgb(205, 223, 221);
+            padding: 20px;
+            margin-top: 70px;
+            border-radius: 10px;
+        }
+
+        .portfolio h1 {
+            text-align: center;
+            color: rgb(66, 94, 90);
+            margin-top: 70px;
+
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            align-items: end;
+            color: rgb(54, 88, 88);
+            margin-top: 90px;
+        }
+
+        .pic,
+        .picc,
+        .piccc,
+        .picccc {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            background-color: rgb(170, 207, 202);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: rgb(59, 85, 81);
+                        margin-top: 90px;
+
+        }
+
+        .pic img,
+        .picc img,
+        .piccc img,
+        .picccc img {
+            height: 400px;
+            width: 40%;
+            object-fit: contain;
+            background-color: rgb(170, 207, 202);
+            border-radius: 10px;
+        }
+
+        .text-container {
+            width: 50%;
+            line-height: 1.5;
+        }
+
+
+
+        .text-container {
+            flex: 1;
+            min-width: 250px;
+            max-width: 600px;
+            line-height: 1.5;
+            background-color: rgb(170, 207, 202);
+
+        }
+
+        .text-container h2 {
+            margin-top: 0;
+            background-color: rgb(170, 207, 202);
+
+        }
+
+        .text-container ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .Menu {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .btn {
+                display: none;
+            }
+
+            .box img {
+                width: 150px;
+            }
+
+            .contact {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Website">
+        <header class="header">
+            <div class="logo">
+                <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\logo.png" alt="logo">
+            </div>
+            <div class="Menu">
+                <a href="#Home"><b>Home</b></a>
+                <a href="#Portfolio"><b>Portfolio</b></a>
+                <a href="#Experience"><b>Experience</b></a>
+                <a href="#About"><b>About</b></a>
+                <a href="#Skills"><b>Skills</b></a>
+
+            </div>
+            <div class="btn">
+                <button class="up">Sign up</button>
+                <button class="down">Sign out</button>
+            </div>
+        </header>
+
+        <div id="Home" class="mainpage">
+            <div class="main">
+                <div class="box_2">
+                    <h1>Hello I'm Aleeza Bhatti</h1>
+                    <h2>Programmer And Website Designer</h2>
+                    <p>
+                        I'm currently looking to join a cross-functional team
+                        that values improving people's lives through accessible design.
+                        <br> I love turning creative ideas into clean, functional, and user-friendly digital
+                        experiences.
+                        Here, you'll find my projects, skills, and journey as I continue to grow in the world of
+                        technology and design.
+                    </p>
+                    <div class="container">
+                        <h1>Our Achievements</h1>
+                        <div class="counter-container">
+                            <div class="counter-box">
+                                <div class="counter" data-target="5">5+</div>
+                                <div class="counter-text">Years of Experiences</div>
+                            </div>
+
+                            <div class="counter-box">
+                                <div class="counter" data-target="20">20+</div>
+                                <div class="counter-text">Projects Done</div>
+                            </div>
+
+                            <div class="counter-box">
+                                <div class="counter" data-target="80">80+</div>
+                                <div class="counter-text">Happy Clients</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="box">
+                        <br>
+                        <img class="box_img" src="c:\Users\AQSA AZAM\Documents\portfolio\images\profile.png"
+                            alt="Profile">
+
+                        <div class="contact">
+                            <img class="msng" src="c:\Users\AQSA AZAM\Documents\portfolio\images\msng.png"
+                                alt="Messenger">
+                            <a href="@aleezabhatti">@aleezabhatti</a>
+
+                            <img class="insta" src="c:\Users\AQSA AZAM\Documents\portfolio\images\download (1).png"
+                                alt="Instagram">
+                            <a href="@aleezabhatti">@aleezabhatti</a>
+
+                            <img class="gmail" src="c:\Users\AQSA AZAM\Documents\portfolio\images\gmail.png">
+                            <a href="mailto:aleezabhatti62@gmail.com">aleezabhatti62@gmail.com</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="Skills">
+            <div class="cards">
+                <h1>My Skills</h1>
+                <p>I have developed a strong set of skills in web development and programming,<br> including
+                    proficiency in HTML, CSS,
+                    and JavaScript for creating responsive and user-friendly websites. Along with frontend
+                    development,<br> I have experience in C++ and Python,
+                    <br>which has strengthened my problem-solving and logical thinking abilities.<br> I also enjoy
+                    working with design concepts,
+                    version control tools <br>like GitHub, and continuously learning new technologies to improve my
+                    technical expertise.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill">
+                        <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\web.jpeg">
+                        <button ><a href="#web">View Details</a></button>
+                        <h3>Web Developer</h3>
+                    </div>
+                    <div class="skill">
+                        <img class="skill2" src="c:\Users\AQSA AZAM\Documents\portfolio\images\machine.jpeg"
+                            alt="Skill 2">
+                        <button ><a href="#mash">View Details</a></button>
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="skill">
+                        <img class="skill3" src="c:\Users\AQSA AZAM\Documents\portfolio\images\designer.jpeg"
+                            alt="Skill 3">
+                        <button ><a href="#desi">View Details</a></button>
+                        <h3>Web Designing</h3>
+                    </div>
+                    <div class="skill">
+                        <img class="skill4" src="c:\Users\AQSA AZAM\Documents\portfolio\images\flutter.png"
+                            alt="Skill 4">
+                        <button ><a href="#flut">View Details</a></button>
+                        <h3>Flutter Developer</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Experience">
+            <div class="Aboutme ">
+                <div class="abimg">
+                    <h1>Experience</h1>
+                    <div class="exp">
+                        <div class="Exp1">
+                            <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\Screenshot 2025-09-07 190307.png">
+                            <h4 class="one"> Developer</h4>
+                            <p>
+                                Built responsive and interactive websites using HTML, CSS, and JavaScript.
+                                Focused on clean code, performance, and user-friendly layouts.
+                            </p>
+
+                        </div>
+                        <div class="Exp2">
+                            <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\Screenshot 2025-09-07 190325.png">
+
+                            <h4 class="two">Machine Learning</h4>
+                            <p>
+                                Gained experience in data analysis and algorithms, exploring how
+                                machine learning models can solve problems.
+                            </p>
+                        </div>
+                        <div class="Exp3">
+                            <img src="c:\Users\AQSA AZAM\Documents\web\Screenshot 2025-09-07 190341.png">
+                            <h4 class="three">Web Designing</h4>
+                            <p>
+                                Worked on creating visually appealing and user-friendly designs,
+                                ensuring smooth navigation and great user experience.
+                            </p>
+                        </div>
+                        <div class="Exp4">
+                            <img src="c:\Users\AQSA AZAM\Pictures\Screenshot 2025-09-07 190408.png">
+                            <h4 class="four">Flutter Developer</h4>
+                            <p>
+                                Developed cross-platform mobile applications with Flutter,
+                                combining functionality with modern UI design.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div id="About" class="content">
+                    <h1>About Me</h1>
+                    <p class="intro">I am a passionate and motivated individual with a strong interest in
+                        technology,
+                        creativity,and problem-solving.I enjoy working on projects that challenge me to think
+                        criticallyand deliver meaningful results.
+                        My goal is to keep learning, improving, and contributing
+                        to innovative solutions that make an impact.</p>
+                    <h3>Creative & Design Skills</h3>
+                    <br>
+
+                    <li>Designed simple UI mockups and prototypes with a focus on usability.</li>
+                    <li>Explored creative problem-solving through both technical and design perspectives.</li>
+
+
+                    <p>
+                    <h3>Team Projects</h3>
+                    <br>
+                    <li> Collaborated on academic and personal projects using GitHub for version control.</li>
+
+                    <li>Participated in group tasks that improved communication, problem-solving, and project
+                        management
+                        skills.</li>
+
+                    </p>
+                    <p>
+                    <h3>Software Development</h3>
+                    <br>
+
+                    <li>Explored programming with C++, Python, and Java to understand core logic-building.</li>
+
+                    <li> Developed small applications and practiced data structures & algorithms.</li>
+
+                    <li> about database integration and software project workflows.</li>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div  id="Portfolio" class="portfolio">
+        <h1 >Portfolio</h1>
+        <div id="web"class="web">
+            <h2>Web Development</h2>
+            <div class="pic">
+                <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\webb.jpg" alt="Website">
+
+                <div class="text-container">
+                    <h2>Project: Women's Fashion Website</h2>
+                    <p><b>Description:</b> Designed and developed a women's fashion e-commerce website that
+                        showcases trendy outfits and accessories with an elegant user interface. The website focuses
+                        on a clean layout, smooth browsing, and an engaging shopping experience.</p>
+
+                    <p><b>Features:</b></p>
+                    <ul>
+                        <li>Responsive design for desktop, tablet, and mobile</li>
+                        <li>Product catalog with categories and filters</li>
+                        <li>Interactive image galleries and hover effects</li>
+                        <li>Contact and subscription form for customer engagement</li>
+                    </ul>
+
+                    <p><b>Tech Stack:</b> HTML, CSS, JavaScript (Frontend)</p>
+                    <p><b>My Role:</b> I handled the entire frontend design, focusing on a stylish, responsive
+                        interface with attention to modern UI/UX practices.</p>
+                </div>
+            </div>
+        </div>
+<div id="mash">
+        <div  class="machine">
+            <h2>Machine Learning</h2>
+            <div class="picc">
+                <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\machine.jpg" alt="Project">
+
+                <div class="text-container">
+                    <h2>Project: Spam Email Classifier</h2>
+                    <p><b>Description:</b> Built a machine learning model using Python and Scikit-learn to classify
+                        emails as spam or not spam. The project involved collecting and preprocessing a dataset,
+                        applying feature extraction techniques, and training multiple models to achieve high
+                        accuracy.</p>
+
+                    <p><b>Features:</b></p>
+                    <ul>
+                        <li>Data preprocessing and cleaning for reliable results</li>
+                        <li>Feature extraction using text vectorization methods (TF-IDF)</li>
+                        <li>Implementation of supervised learning algorithms (Naive Bayes, SVM)</li>
+                        <li>Model evaluation with precision, recall, and F1-score</li>
+                    </ul>
+
+                    <p><b>Tech Stack:</b> Python, Scikit-learn, Pandas, NumPy</p>
+                    <p><b>My Role:</b> I worked on dataset preprocessing, applied ML algorithms, and evaluated
+                        performance to select the best-performing model.</p>
+                </div>
+            </div>
+        </div>
+</div>
+<div id="desi">
+        <div  class="designer">
+            <h2 >Web Designer</h2>
+            <div class="piccc">
+                <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\design.jpg" alt="Project">
+
+                <div class="text-container">
+                    <h2>Project: Sarina - Meditation & Mindfulness Website</h2>
+                    <p><b>Description:</b> Sarina is a mindfulness and meditation website that promotes a calm and
+                        meaningful lifestyle. It blends modern web design with a soothing user experience to
+                        encourage users toward better mental health.</p>
+
+                    <p><b>Features:</b></p>
+                    <ul>
+                        <li>Visually appealing UI with nature-inspired design</li>
+                        <li>Sections for meditation techniques, community support, and health benefits</li>
+                        <li>User-friendly navigation with clear call-to-action buttons</li>
+                        <li>Highlighted statistics to showcase community impact</li>
+                    </ul>
+
+                    <p><b>Tech Stack:</b> HTML, CSS, JavaScript (Frontend), Responsive design</p>
+                    <p><b>My Role:</b> I designed the website's layout and integrated content sections to ensure
+                        clarity, engagement, and a smooth user journey.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="flut" class="flutter">
+            <h2>Flutter Developer</h2>
+            <div class="picccc">
+                <img src="c:\Users\AQSA AZAM\Documents\portfolio\images\flut.jpg" alt="Project">
+
+                <div class="text-container">
+                    <h2>Project 1: Xinau – Online Learning App</h2>
+
+                    <p><b>Description:</b> Xinau is a mobile application designed to provide users with free access
+                        to online courses. The app focuses on making learning simple, engaging, and effective by
+                        offering expert guidance.</p>
+
+                    <p><b>Features:</b></p>
+                    <ul>
+                        <li>User-friendly onboarding screens for smooth navigation</li>
+                        <li>Sign-up and authentication system (email & Google integration)</li>
+                        <li>Clean and modern UI with a focus on accessibility</li>
+                        <li>Easy course access with motivational visuals</li>
+                    </ul>
+
+                    <p><b>Tech Stack:</b> Flutter (Frontend), Firebase (Authentication & Database)</p>
+                    <p><b>My Role:</b> I designed and developed the front-end interface, ensuring responsiveness,
+                        intuitive navigation, and clean aesthetics.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+</html>

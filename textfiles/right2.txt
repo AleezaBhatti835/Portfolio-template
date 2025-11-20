@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aleeza Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(189, 223, 211);
+    }
+
+    .Website {
+      display: grid;
+      grid-template-columns: 1fr 250px;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+    }
+
+    .mainpage {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      padding-top: 80px;
+    }
+
+    .Aboutme {
+      display: flex;
+      grid-column: 2 / 3;
+      grid-row: 2;
+      background-color: rgb(158, 202, 190);
+      padding: 20px;
+      margin-top: 1.5%;
+      overflow-y: auto;
+    }
+
+    .Aboutme h2 {
+      color: rgb(47, 85, 85);
+    }
+
+    .header {
+      grid-row: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 20px;
+      background-color: rgb(127, 168, 154);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .Menu {
+      display: flex;
+      gap: 60px;
+      margin-left: 4%;
+      margin-left: 8%;
+    }
+
+    .Menu a {
+      color: rgb(58, 85, 85);
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .btn {
+      display: flex;
+      gap: 30px;
+
+  }
+  .up{
+    background-color: rgb(208, 248, 248);
+    border: 0px;
+    border-radius: 5px 5px;
+    width: 70px;
+    height: 21px;
+  }
+  .down{
+    background-color: rgb(208, 248, 248);
+    border: 0px;
+    border-radius: 5px 5px;
+    width: 70px;
+    height: 21px;
+  }
+  
+    .main {
+      display: flex;
+      background-color: rgb(189, 223, 211);
+      padding: 20px;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      height: 10%;
+    }
+
+    .box_img {
+      width: 200px;
+      height: 90%;
+      border-radius: 50%;
+      display: block;
+      margin-top: 1px;
+      border: 1px solid  hsl(181, 26%, 39%);
+      border-style: groove;
+      background-color: hsl(182, 12%, 59%);
+    }
+
+    .box_2 {
+      flex: 1;
+      text-align: center;
+      background-color: rgb(199, 221, 213);
+      padding: 20px;
+      border-radius: 10px;
+      height: 5%;
+    }
+
+    .box_2 h1 {
+      margin-bottom: 25px;
+      color: hsl(181, 26%, 39%);
+      -webkit-text-stroke: 0.5px rgb(22, 138, 138);
+    }
+
+    .box_2 h2 {
+      margin-bottom: 30px;
+      color: hsl(180, 16%, 38%);
+    }
+
+    .box_2 p {
+      margin-bottom: 30px;
+      color: hsl(180, 18%, 29%);
+    }
+
+    .box_2 button {
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      background-color: rgb(96, 124, 115);
+      border: 1px solid rgb(93, 124, 114);
+      color: white;
+      cursor: pointer;
+    }
+
+    .contact {
+      margin-left: 10%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .contact img {
+      width: 30px;
+      height: 25px;
+    }
+
+    .contact a {
+      color: rgb(69, 95, 86);
+      font-size: 16px;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .cards {
+      background-color: rgb(205, 223, 221);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .cards h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: rgb(66, 94, 90);
+
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill {
+      background: rgb(174, 195, 196);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .skill img {
+      width: 20dvw;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .skill3 {
+      width: 20dvw;
+      height: 28.5dvh;
+    }
+
+    .skill4 {
+      width: 20dvw;
+      height: 28.5dvh;
+    }
+    .skill2 {
+      width: 20dvw;
+      height: 28.5dvh;
+    }
+.Details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 38%;
+  text-decoration: 1px underline;
+}
+    .skill button {
+      padding: 8px 15px;
+      border-radius: 5px;
+      border: none;
+      background: rgb(92, 145, 130);
+      color: white;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+.skill h3{
+color: rgb(44, 80, 70);
+
+}   
+ /*RESPONSIVE  */
+    @media (max-width: 1024px) {
+      .Website {
+        grid-template-columns: 1fr;
+      }
+
+      .Aboutme {
+        grid-column: 1 / -1;
+        margin-top: 100px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .Menu {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .box img {
+        width: 150px;
+      }
+
+      .contact {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="Website">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <img src="c:\Users\AQSA AZAM\Documents\portfolio\images (3) (1).png" alt="logo">
+      </div>
+      <div class="Menu">
+        <a href="#Home"><b>Home</b></a>
+        <a href="#"><b>Portfolio</b></a>
+        <a href="#"><b>Contact</b></a>
+        <a href="#"><b>Services</b></a>
+                <a href="#Skills"><b>Skills</b></a>
+
+      </div>
+      <div class="btn">
+        <button class="up" >Sign up</button>
+        <button class="down">Sign out</button>
+      </div>
+    </header>
+
+    <div id="Home" class="mainpage">
+      <div class="main">
+        <div class="box_2">
+          <h1>Hello I'm Aleeza Bhatti</h1>
+          <h2>Programmer And Website Designer</h2>
+          <p>
+            I'm currently looking to join a cross-functional team
+            that values improving people's lives through accessible design.
+          </p>
+          <button>Hire Me</button>
+          <button>View CV</button>
+              <h2 class="Details">For More Details Visit</h2>
+
+          <div class="box">
+            <img class="box_img" src="c:\Users\AQSA AZAM\Documents\portfolio\89783743-0367-4453-a215-c5154f29f0e4.png" alt="Profile">
+
+            <div class="contact">
+              <img class="msng" src="c:\Users\AQSA AZAM\Documents\portfolio\msng.png" alt="Messenger">
+              <a href="@aleezabhatti">@aleezabhatti</a>
+
+              <img class="insta" src="c:\Users\AQSA AZAM\Documents\portfolio\insta.png" alt="Instagram">
+              <a href="@aleezabhatti">@aleezabhatti</a>
+
+              <img class="gmail" src="c:\Users\AQSA AZAM\Documents\portfolio\Remove background project (3).png">
+              <a href="mailto:aleezabhatti62@gmail.com">aleezabhatti62@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Skills" class="cards">
+        <h1>My Skills</h1>
+        <div class="skills-grid">
+          <div class="skill">
+            <img src="c:\Users\AQSA AZAM\Documents\portfolio\images (2).jpeg">
+            <button>View Details</button>
+            <h3>Web Developer</h3>
+          </div>
+          <div class="skill">
+            <img class="skill2" src="c:\Users\AQSA AZAM\Documents\portfolio\download (2).jpeg" alt="Skill 2">
+            <button>View Details</button>
+            <h3>Machine Learning</h3>
+          </div>
+          <div class="skill">
+            <img class="skill3" src="c:\Users\AQSA AZAM\Documents\portfolio\download (1).jpeg" alt="Skill 3">
+            <button>View Details</button>
+            <h3>Web Designing</h3>
+          </div>
+          <div class="skill">
+            <img class="skill4" src="c:\Users\AQSA AZAM\Documents\portfolio\images (2).png" alt="Skill 4">
+            <button>View Details</button>
+            <h3>Flutter Developer</h3>
+          </div>
+        </div>
+      </div>
+      <div class="Aboutme ">
+        <h2>About Me</h2>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

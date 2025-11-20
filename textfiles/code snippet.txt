@@ -1,0 +1,95 @@
+     .box_2 button {
+            width: 8dvw;
+            height: 5dvh;
+            padding: 5px;
+            align-items: center;
+            margin-top: 40px;
+            border-radius: 20px 20px;
+            background-color: rgb(96, 124, 115);
+            border-color: rgb(93, 124, 114);
+            color: rgb(182, 219, 206);
+            margin-left: 40%;
+            border: 1px solid;
+            cursor: pointer;
+        }
+
+
+        .box_2 h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: hsl(182, 19%, 31%);
+        }
+
+        .img {
+            gap: 20px;
+        }
+
+        .msng {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 4dvw;
+            height: 7dvh;
+            margin-left: 10px;
+            margin-top: 10px;
+
+        }
+
+        .insta {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 5dvw;
+            height: 5dvh;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .gmail {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 3dvw;
+            height: 5dvh;
+            margin-left: 15px;
+            margin-top: 10px;
+
+        }
+
+        .contact {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .mslink {
+            color: rgb(69, 95, 86);
+            display: inline-block;
+        }
+
+        .inslink {
+            color: rgb(69, 95, 86);
+            display: inline-block;
+        }
+
+        .gmalink {
+            color: rgb(69, 95, 86);
+            display: inline-block;
+            gap: 5px;
+            margin-left: 20px
+        }
+ 
+
+
+<h2>Follow for More</h2>
+                    <div class="contact">
+                        <img class="msng" src="c:\Users\AQSA AZAM\Documents\web\msng.png">
+                        <a class="mslink" href="@aleezabhatti">@aleezabhatti</a>
+                        <img class="insta" src="c:\Users\AQSA AZAM\Documents\web\insta.png">
+                        <a class="inslink" href="@aleezabhatti">@aleezabhatti</a>
+                        <img class="gmail" src="c:\Users\AQSA AZAM\Documents\web\gmail.png">
+                        <a class="gmalink" href="aleezabhatti62@gmail.com">aleezabhatti62@gmail.com</a>
+                    </div>

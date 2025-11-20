@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Email Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Stolzl, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+            background-color: hsl(0 0% 100%);
+            overflow-x: hidden;
+
+        }
+
+        .Website {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            width: 100%;
+
+        }
+
+        .mainpage {
+            padding-top: 80px;
+
+        }
+
+        .header {
+            grid-row: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: hsl(0 0% 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 60px;
+        }
+
+        .Menu {
+
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-left: 90px;
+        }
+
+        .Menu a {
+
+            color: rgb(45, 73, 73);
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: flex;
+            gap: 15px;
+        }
+
+
+        .up {
+            background-color: hsl(0 0% 100%);
+            width: 100px;
+            height: 50px;
+            border-radius: 50px 50px;
+            border: 0.01px solid rgb(68, 67, 67);
+
+        }
+
+        .down {
+            background-color: #a8e6a3;
+            width: 170px;
+            border-radius: 100px 100px;
+            height: 47px;
+            border: 1px #a8e6a3;
+        }
+
+        .mainpage {
+            display: flex;
+            flex-direction: column;
+            background-color: hsl(0 0% 100%);
+            padding: 20px;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 550px;
+            margin-top: 50px;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 0.5px, transparent 0.7px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0.5px, transparent 0.7px);
+            background-size: 60px 60px;
+        }
+
+        .background-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .background-icons img {
+            position: absolute;
+            width: 60px;
+            opacity: 0.5;
+        }
+
+        .background-icons img:nth-child(1) {
+            top: 17%;
+            left: 20%;
+        }
+
+        .background-icons img:nth-child(2) {
+            top: 40%;
+            left: 90%;
+        }
+
+        .background-icons img:nth-child(3) {
+            top: 75%;
+            left: 15%;
+        }
+
+        .background-icons img:nth-child(4) {
+            top: 60%;
+            left: 90%;
+        }
+
+        .background-icons img:nth-child(5) {
+            top: 40%;
+            left: 70%;
+        }
+
+        .background-icons img:nth-child(6) {
+            top: 30%;
+            left: 10%;
+        }
+
+        .background-icons img:nth-child(7) {
+            top: 80%;
+            left: 60%;
+        }
+
+        .background-icons img:nth-child(8) {
+            top: 20%;
+            left: 70%;
+        }
+
+        .background-icons img:nth-child(9) {
+            top: 40%;
+            left: 90%;
+            filter: blur(5px);
+
+        }
+
+        .background-icons img:nth-child(10) {
+            top: 80%;
+            left: 45%;
+            filter: blur(5px);
+
+        }
+
+
+        .background-icons img:nth-child(11) {
+            top: 47%;
+            left: 29%;
+            filter: blur(5px);
+
+        }
+
+        .background-icons img:nth-child(12) {
+            top: 86%;
+            left: 7%;
+            filter: blur(5px);
+        }
+
+        .text {
+            min-width: 80px;
+            height: 200px;
+            text-align: center;
+            background-color: hsl(0 0% 100%);
+            padding: 20px;
+            color: black;
+
+        }
+
+        h1 {
+            font-size: 60px;
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+
+        .p {
+            margin-top: 20px;
+        }
+
+        .material-icons {
+            font-size: 18px;
+        }
+
+        .email-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid hsl(0, 4%, 10%);
+            gap: 10px;
+            border-radius: 50px;
+            width: 550px;
+            height: 65px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: hsl(0 0% 100%);
+        }
+
+        .email-container input {
+            border: none;
+            outline: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .email-container button {
+            background-color: #a8e6a3;
+            border: none;
+            outline: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            margin-left: 120px;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+        }
+
+        .email-container button:hover {
+            background-color: #8ed88a;
+        }
+
+
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin-top: 50px;
+        }
+
+        .counter-box {
+            background: hsl(0 0% 100%);
+            padding: 20px;
+            border-radius: 12px;
+            width: 370px;
+            height: 170px;
+            border: 0.1px solid rgb(189, 185, 185);
+        }
+
+
+
+        .counter-box h2 {
+            color: rgb(34, 33, 33);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 45px;
+            font-weight: 100;
+            text-decoration: double;
+
+        }
+
+        .counter-box h3 {
+            font-size: 1.1rem;
+            color: rgb(80, 77, 77);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 500;
+
+        }
+
+        .pic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            gap: 20px;
+            background-color: rgb(196, 196, 230);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: rgb(59, 85, 81);
+            margin-top: 90px;
+            width: 93dvw;
+            height: 100vh;
+
+        }
+
+        .picc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            gap: 20px;
+            background-color:hsl(7 100% 83%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: rgb(59, 85, 81);
+            margin-top: 90px;
+            width: 93dvw;
+            height: 100vh;
+
+        }
+        .h33{
+            color: hsl(7, 82%, 36%);
+        }
+.piccc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            gap: 20px;
+            background-color:hsl(206 100% 89%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: rgb(59, 85, 81);
+            margin-top: 90px;
+            width: 93dvw;
+            height: 100vh;
+
+        }
+        .h333{
+            color:hsl(206, 60%, 42%) ;
+        }
+
+        .img {
+            height: 50vh;
+            width: 50vw;
+            border-radius: 10px;
+        }
+
+        .text-container {
+            width: 50%;
+            line-height: 1.5;
+            margin-left: 90px;
+        }
+        .h3{
+            color: rgb(20, 105, 233);
+
+        }
+
+        .heading {
+            font-weight: 300px;
+            color: black;
+            font-size: 30px;
+        }
+
+        .pic button,
+        .picc button,
+        .piccc button {
+            background-color: #394638;
+            border: none;
+            outline: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #faf6f6;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 50px;
+            width: 11vw;
+            margin-top: 20px;
+        }
+      
+
+        .imgs {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .img-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .img-row img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            color: rgb(79, 79, 175);
+        }
+
+        .img-row p {
+            margin: 0;
+            font-size: 16px;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Website">
+        <header class="header">
+            <div class="logo">
+                <img src="images/loggo.png" alt="logo">
+            </div>
+            <div class="Menu">
+                <a href="#Home"><b>Features <span class="material-icons">expand_more</span></b></a>
+                <a href="#Portfolio"><b>Channels <span class="material-icons">expand_more</span></b></a>
+                <a href="#Experience"><b>Resources <span class="material-icons">expand_more</span></b></a>
+                <a href="#About"><b>Pricing</b></a>
+            </div>
+
+            <div class="btn">
+                <button class="up">Login</button>
+                <button class="down">Get started now</button>
+            </div>
+        </header>
+        <div id="Home" class="mainpage">
+            <div class="background-icons">
+                <img src="images/images (7).png" alt="wtsp">
+                <img src="images/images (6).png" alt="snp">
+                <img src="images/download (9).png" alt="Twitter">
+                <img src="images/images (1) (1).png" alt="Facebook">
+                <img src="images/images (2).png" alt="link">
+                <img src="images/images (3) (1).png" alt="pint">
+                <img src="images/images (4) (1).png" alt="word">
+                <img src="images/images (5).png" alt="Instagram">
+
+
+                <img src="images/images (2).png" alt="link">
+                <img src="images/images (3) (1).png" alt="pint">
+                <img src="images/images (4) (1).png" alt="word">
+                <img src="images/images (5).png" alt="Instagram">
+            </div>
+
+            <div class="text">
+                <h1>YOUR SOCIAL MEDIA <br> WORKSPACE</h1><br>
+                <p class="p">Share consistently without the chaos</p>
+            </div><br>
+            <div class="email-container">
+                <input type="email" placeholder="Enter your email...">
+                <button>Get started now &#8594</button>
+            </div>
+            <p>By entering your email, you agree to receive emails from Buffer.</p>
+
+        </div>
+        <div class="container">
+            <div class="counter-container">
+                <div class="counter-box">
+                    <h2><b>18,362,3271</b></h2>
+                    <h3>Active users</h3>
+                </div>
+
+                <div class="counter-box">
+                    <h2><b>362,3271</b></h2>
+                    <h3>posts published last month</h3>
+                </div>
+
+                <div class="counter-box">
+                    <h2><b>71</b></h2>
+                    <h3>Social platforms supported</h3>
+                </div>
+            </div>
+        </div>
+        <div class="pic">
+            <img class="img" src="images/publish-large.webp" alt="Website">
+
+            <div class="text-container">
+                <h3 class="h3">PUBLISH</h3>
+                <h2 class="heading"> The most complete set of publishing integrations ever</h2>
+                <br>
+                <p>Schedule your content to the most popular platforms including Facebook, Instagram, TikTok, LinkedIn,
+                    Threads, Bluesky, YouTube Shorts, Pinterest, Google Business, Mastodon and X.</p>
+                <button>Learn more &#8594;
+                </button>
+                <div class="imgs">
+                    <div class="img-row">
+                        <img src="images/download (1).png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img src="images/Remove background project.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img
+                            src="images/calendar-icon-line-style-design-simple-vector-perfect-illustration-calendar-icon-line-style-design-simple-symbol-perfect-vector-352068874.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         <div class="picc">
+           
+
+            <div class="text-container">
+                <h3 class="h33">Create</h3>
+                <h2 class="heading"> Turn any idea into the perfect post</h2>
+                <br>
+                <p>Whether you’re flying solo or working with a team, Buffer has all the features to help you create, organize, and repurpose your content for any channel. There’s also an AI Assistant if you need it.</p>
+                <button>Learn more &#8594;
+                </button>
+                <div class="imgs">
+                    <div class="img-row">
+                        <img src="images/download (1).png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img src="images/Remove background project.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img
+                            src="images/calendar-icon-line-style-design-simple-vector-perfect-illustration-calendar-icon-line-style-design-simple-symbol-perfect-vector-352068874.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                </div>
+
+            </div>
+             <img class="img" src="images/create-large.webp" alt="Website">
+            </div>
+
+
+            <div class="piccc">
+           
+
+            <div class="text-container">
+                <h3 class="h333">Analyze</h3>
+                <h2 class="heading"> Answers, not just analytics/h2>
+                <br>
+                <p>Whether it’s basic analytics or in-depth reporting, Buffer will help you learn what works and how to improve.</p>
+                <button>Learn more &#8594;
+                </button>
+                <div class="imgs">
+                    <div class="img-row">
+                        <img src="images/download (1).png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img src="images/Remove background project.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                    <div class="img-row">
+                        <img
+                            src="images/calendar-icon-line-style-design-simple-vector-perfect-illustration-calendar-icon-line-style-design-simple-symbol-perfect-vector-352068874.png">
+                        <p>Responsive design for desktop, tablet, and mobile</p>
+                    </div>
+                </div>
+
+            </div>
+             <img class="img" src="images/create-large.webp" alt="Website">
+            </div>
+
+    </div>
+</body>
+
+</html>
