@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Template</title>
+    <title>Portfolio Template - Aleeza Bhatti</title>
     <style>
-        /* Base Reset & Variables */
         * {
             margin: 0;
             padding: 0;
@@ -14,14 +13,15 @@
         }
 
         :root {
-            --bg-color: rgb(189, 223, 211);
-            --nav-bg: rgb(127, 168, 154);
-            --card-bg: rgb(205, 223, 221);
-            --card-bg-light: rgb(170, 207, 202);
-            --text-main: rgb(45, 73, 73);
-            --text-heading: hsl(181, 26%, 39%);
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --bg-color: #e6f2ee;
+            --nav-bg: #7fa89a;
+            --card-bg: #ffffff;
+            --card-bg-light: #f4f9f7;
+            --text-main: #2d4949;
+            --text-heading: #24524f;
+            --accent-color: #5c9182;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
             --transition: all 0.3s ease;
         }
 
@@ -30,10 +30,11 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         /* Animations */
@@ -48,7 +49,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            padding: 10px 4%;
+            padding: 15px 5%;
             background-color: var(--nav-bg);
             position: fixed;
             top: 0;
@@ -58,8 +59,10 @@
         }
 
         .logo img {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
             transition: var(--transition);
         }
         
@@ -69,16 +72,17 @@
 
         .Menu {
             display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 25px;
+            align-items: center;
         }
 
         .Menu a {
-            color: var(--text-main);
-            font-size: 17px;
+            color: #fff;
+            font-size: 16px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             position: relative;
+            transition: var(--transition);
         }
 
         .Menu a::after {
@@ -88,7 +92,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: var(--text-main);
+            background-color: #fff;
             transition: var(--transition);
         }
 
@@ -98,18 +102,19 @@
 
         .btn {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn button {
-            background-color: rgb(208, 248, 248);
+            background-color: #ffffff;
+            color: var(--text-heading);
             border: 0;
-            border-radius: 5px;
-            padding: 8px 18px;
-            font-weight: bold;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .btn button:hover {
@@ -118,35 +123,33 @@
             transform: translateY(-2px);
         }
 
-        /* Full Page Section Containers */
         .section-container {
             width: 100%;
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex;
             align-items: center; 
             justify-content: center;
-            padding: 100px 3% 40px; 
+            padding: 120px 5% 60px; 
             animation: fadeUp 0.8s ease-out;
         }
 
-        /* Inner Content Wrappers */
         .cards, .Aboutme, .content, .portfolio, .contact-section {
             background-color: var(--card-bg);
-            padding: 50px 4%; 
-            border-radius: 15px;
+            padding: 40px 5%; 
+            border-radius: 20px;
             box-shadow: var(--shadow);
             width: 100%;
-            max-width: 1600px; 
+            max-width: 1300px; 
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--text-heading);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
-        /* Home Section */
         .main {
             display: flex;
             flex-wrap: wrap;
@@ -154,52 +157,55 @@
             align-items: center;
             gap: 40px;
             width: 100%;
-            max-width: 1600px;
+            max-width: 1300px;
+            background-color: var(--card-bg);
+            padding: 50px 5%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
         .box_2 {
-            flex: 1.5;
+            flex: 1.2;
             min-width: 300px;
-            background-color: rgb(199, 221, 213);
-            padding: 60px 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            text-align: center;
+            text-align: left;
         }
 
         .box_2 h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
             color: var(--text-heading);
+            line-height: 1.2;
         }
 
         .box_2 h2 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 20px;
-            color: hsl(180, 16%, 38%);
+            color: var(--accent-color);
+            font-weight: 600;
         }
 
         .box_2 p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #555;
         }
 
         .counter-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin-top: 30px;
         }
 
         .counter-box {
-            background: rgb(129, 160, 161);
-            padding: 20px;
+            background: var(--card-bg-light);
+            padding: 15px;
             border-radius: 12px;
-            width: 170px;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid #d5e8e2;
         }
 
         .counter-box:hover {
@@ -208,31 +214,33 @@
         }
 
         .counter {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #d5eeee;
-            margin-bottom: 8px;
+            color: var(--text-heading);
+            margin-bottom: 5px;
         }
 
         .counter-text {
-            color: #f1f8f8;
-            font-size: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1;
+            flex: 0.8;
+            min-width: 280px;
         }
 
         .box_img {
-            width: 320px;
-            height: 320px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            border: 4px solid var(--text-heading);
+            border: 4px solid var(--accent-color);
             object-fit: cover;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
@@ -243,84 +251,90 @@
 
         .contact {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 280px;
         }
 
         .contact a {
             color: var(--text-main);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            background: var(--card-bg-light);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #d5e8e2;
         }
 
         .contact a:hover {
             color: var(--text-heading);
+            background: #e2f0ec;
             transform: translateY(-2px);
         }
 
         .contact img {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             object-fit: contain;
         }
 
-        /* Skills Section */
         .cards p {
             text-align: center;
-            font-size: 1.15rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             margin-bottom: 40px;
-            max-width: 1200px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            color: #555;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px; 
         }
 
         .skill {
-            background: rgb(174, 195, 196);
+            background: var(--card-bg-light);
             border-radius: 12px;
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             transition: var(--transition);
             box-shadow: var(--shadow);
+            border: 1px solid #d5e8e2;
         }
 
         .skill:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: var(--hover-shadow);
         }
 
         .skill img {
             width: 100%;
-            height: 180px; 
+            height: 150px; 
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         .skill button {
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 8px 16px;
+            border-radius: 6px;
             border: none;
-            background: rgb(92, 145, 130);
+            background: var(--accent-color);
             color: white;
             cursor: pointer;
-            margin-bottom: 15px;
-            font-weight: bold;
+            margin-bottom: 12px;
+            font-weight: 600;
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .skill button:hover {
@@ -333,123 +347,133 @@
         }
 
         .skill h3 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
+            color: var(--text-heading);
         }
 
-        /* Experience Section */
         .exp {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .exp div {
-            background: rgb(188, 209, 206);
-            padding: 30px 20px;
+            background: var(--card-bg-light);
+            padding: 25px 20px;
             border-radius: 12px;
             text-align: center;
             transition: var(--transition);
             box-shadow: var(--shadow);
+            border: 1px solid #d5e8e2;
         }
 
         .exp div:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: var(--hover-shadow);
         }
 
         .exp img {
             width: 100%;
-            height: 160px;
+            height: 120px;
             object-fit: contain; 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .exp h4 {
             color: var(--text-heading);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
         }
 
         .exp p {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             line-height: 1.5;
+            color: #555;
         }
 
         /* About Section */
         .content p.intro {
             text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            max-width: 1000px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            color: #555;
         }
 
         .content h3 {
             color: var(--text-heading);
             margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
         .content ul {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 20px;
         }
 
         .content li {
-            margin-left: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        /* Portfolio Section */
         .project-card {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
             background-color: var(--card-bg-light);
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid #d5e8e2;
         }
 
         .project-card:hover {
-            transform: scale(1.01);
+            transform: translateY(-3px);
             box-shadow: var(--hover-shadow);
         }
 
         .project-card img {
             width: 45%;
-            height: 350px;
+            height: 280px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 10px;
+            flex-shrink: 0;
         }
 
         .text-container {
             width: 55%;
-            line-height: 1.7;
-            font-size: 1.1rem;
+            line-height: 1.6;
+            font-size: 1rem;
         }
 
         .text-container h2 {
             color: var(--text-heading);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        .text-container p {
+            color: #555;
+            margin-bottom: 10px;
         }
 
         .text-container ul {
-            margin: 15px 0;
+            margin: 10px 0;
             padding-left: 20px;
+            color: #555;
         }
 
-        /* Contact Section */
         .contact-wrapper {
             display: flex;
-            gap: 60px;
+            gap: 50px;
             align-items: stretch;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .contact-info, .contact-form-container {
@@ -458,28 +482,30 @@
 
         .contact-info h2 {
             color: var(--text-heading);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
         }
 
         .contact-info p {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            color: #555;
         }
 
         .contact-info ul {
             list-style: none;
             padding: 0;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
         }
 
         .contact-info li {
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-weight: bold;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         .contact-form-container form {
@@ -488,12 +514,12 @@
         }
 
         .contact-form-container input, .contact-form-container textarea {
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            border: none;
+            padding: 12px 18px;
+            margin-bottom: 15px;
+            border: 1px solid #d5e8e2;
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.5);
-            font-size: 1.05rem;
+            background-color: #fff;
+            font-size: 1rem;
             color: var(--text-main);
             outline: none;
             font-family: inherit;
@@ -501,59 +527,63 @@
         }
 
         .contact-form-container input:focus, .contact-form-container textarea:focus {
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 8px rgba(127, 168, 154, 0.3);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px rgba(92, 145, 130, 0.3);
         }
 
         .contact-form-container button {
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border: none;
-            background: rgb(92, 145, 130);
+            background: var(--accent-color);
             color: white;
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
         }
 
         .contact-form-container button:hover {
             background: var(--text-heading);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        /* Responsive Design */
         @media (max-width: 1024px) {
-            .skills-grid, .exp {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .project-card, .contact-wrapper {
                 flex-direction: column;
+                gap: 25px;
             }
             .project-card img, .text-container {
                 width: 100%;
                 height: auto;
             }
             .section-container {
-                min-height: auto; /* Allow auto height for mobile */
-                padding: 120px 3% 40px;
+                min-height: auto; 
+                padding: 100px 4% 40px;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 10px;
+                gap: 15px;
+                padding: 12px;
             }
             .Menu {
                 justify-content: center;
                 gap: 15px;
-                margin-top: 10px;
+                flex-wrap: wrap;
             }
             .btn {
                 display: none;
             }
-            .skills-grid, .exp {
+            .section-container {
+                padding-top: 140px;
+            }
+            .box_2 h1 {
+                font-size: 2.2rem;
+            }
+            .counter-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -562,7 +592,6 @@
 
 <body>
     <div class="Website">
-        <!-- Header -->
         <header class="header">
             <div class="logo">
                 <img src="images/logo.png" alt="logo">
@@ -581,18 +610,17 @@
             </div>
         </header>
 
-        <!-- Home Section -->
         <div id="Home" class="section-container">
             <div class="main">
                 <div class="box_2">
-                    <h1>Hello I'm Aleeza Bhatti</h1>
-                    <h2>Programmer And Website Designer</h2>
+                    <h1>Hello, I'm Aleeza Bhatti</h1>
+                    <h2>Programmer & Website Designer</h2>
                     <p>
                         I'm currently looking to join a cross-functional team that values improving people's lives through accessible design.
                         <br><br> I love turning creative ideas into clean, functional, and user-friendly digital experiences.
                     </p>
                     
-                    <h1 style="font-size: 2rem; margin-top: 25px;">Our Achievements</h1>
+                    <h2 style="font-size: 1.3rem; margin-top: 20px; color: var(--text-heading);">Our Achievements</h2>
                     <div class="counter-container">
                         <div class="counter-box">
                             <div class="counter">5+</div>
@@ -610,7 +638,7 @@
                 </div>
 
                 <div class="box">
-                    <img class="box_img" src="images/logo.png" alt="Profile">
+                    <img class="box_img" src="images/design.jpg" alt="Profile">
                     <div class="contact">
                         <a href="#"><img src="images/msng.png" alt="Messenger"> @aleezabhatti</a>
                         <a href="#"><img src="images/download (1).png" alt="Instagram"> @aleezabhatti</a>
@@ -653,7 +681,6 @@
             </div>
         </div>
 
-        <!-- Experience Section -->
         <div id="Experience" class="section-container">
             <div class="Aboutme">
                 <h1 class="section-title">Experience</h1>
@@ -682,7 +709,6 @@
             </div>
         </div>
 
-        <!-- About Section -->
         <div id="About" class="section-container">
             <div class="content">
                 <h1 class="section-title">About Me</h1>
@@ -708,12 +734,10 @@
             </div>
         </div>
 
-        <!-- Portfolio Section -->
         <div id="Portfolio" class="section-container">
             <div class="portfolio">
                 <h1 class="section-title">Portfolio</h1>
                 
-                <!-- Project 1 -->
                 <div id="web" class="project-card">
                     <img src="images/webb.jpg" alt="Website">
                     <div class="text-container">
@@ -728,7 +752,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div id="mash" class="project-card">
                     <div class="text-container">
                         <h2>Project: Spam Email Classifier</h2>
@@ -743,7 +766,6 @@
                     <img src="images/machine.jpg" alt="Project">
                 </div>
 
-                <!-- Project 3 -->
                 <div id="desi" class="project-card">
                     <img src="images/design.jpg" alt="Project">
                     <div class="text-container">
@@ -758,10 +780,9 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
                 <div id="flut" class="project-card">
                     <div class="text-container">
-                        <h2>Project 1: Xinau – Online Learning App</h2>
+                        <h2>Project: Xinau – Online Learning App</h2>
                         <p><b>Description:</b> Xinau is a mobile application designed to provide users with free access to online courses focusing on making learning simple.</p>
                         <p><b>Features:</b></p>
                         <ul>
@@ -772,11 +793,9 @@
                     </div>
                     <img src="images/flut.jpg" alt="Project">
                 </div>
-
             </div>
         </div>
 
-        <!-- Contact Section -->
         <div id="Contact" class="section-container">
             <div class="contact-section">
                 <h1 class="section-title">Contact Me</h1>
